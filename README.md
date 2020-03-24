@@ -1,2 +1,2 @@
-# covid-19_Pernambuco
+# Covid-19 Pernambuco
 Data for Pernambuco - Brazil
