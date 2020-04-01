@@ -1,4 +1,4 @@
-DATA DA NOTIFICAÇÃO;ID;Data da notificação;Sexo;Idade;CEP residência;Estado de residência;Geres;Município;Endereço completo;Especifique;Classificação final;EVOLUÇÃO;Local de atendimento / Unidade notificadora;LOCAL INTERNAMENTO;Resultado;OCUPAÇÃO
+DATA DA NOTIFICAÇÃO;ID;Data.da.notificação;Sexo;Idade;CEP.residência;Estado.de.residência;Geres;Município;Endereço.completo;Especifique;Classificação.final;EVOLUÇÃO;Local.de.atendimento./.Unidade.notificadora;LOCAL.INTERNAMENTO;Resultado;OCUPAÇÃO
 2020-01-20;557;20/01/2020;FEMININO;82.0;;PERNAMBUCO;I;OLINDA;PE, RECIFE, RUA CARDEAL, Nº 24;;DESCARTADO;;;;INFLUENZA A;
 2020-02-13;722;13/02/2020;MASCULINO;30.0;;PERNAMBUCO;I;RECIFE;RUA ENGENHEIRO JOSE BRANDAO;;DESCARTADO;;;;INFLUENZA B;
 2020-02-20;551;20/02/2020;FEMININO;3.0;;PERNAMBUCO;IV;CARUARU;VERA CRUZ 589 SAO FRANCISCO  CARUARU - PERNAMBUCO;;DESCARTADO;;;;NEGATIVO INFLUENZA/NEGATIVO SARS-COV-2;
