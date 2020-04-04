@@ -13,3 +13,4 @@ forman_ricci_mundial <- read_csv("~/Documents/GitHub/covid-19_Pernambuco/curvatu
 forman_ricci_mundial$periodo = as.Date.character(forman_ricci_mundial$periodo, format = "%d %b")
 class(forman_ricci_mundial$periodo)
 write.csv(forman_ricci_mundial, "forman_ricci_mundial2.csv")
+
