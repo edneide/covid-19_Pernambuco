@@ -1,0 +1,181 @@
+---
+title: "Curvatura Forman-Ricci"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+# Bibliotecas 
+library(reticulate) #para rodar códigos em Python
+library(readr)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(plotly)
+#library(coronavirus)
+#data(coronavirus)
+```
+
+
+```{r, include = FALSE}
+# Local da versão do Python a ser utilizada
+use_python('/opt/anaconda3/bin/python', required = TRUE)
+#py_install("orca")
+# Rodando 
+# Importante: mudar o diretório para onde se encontra o arquivo!
+py_run_file("Ricci.py")
+
+
+# Carregando os csv's gerados
+ricci_mundo <- read_csv("forman_ricci_mundial.csv")
+ricci_brasil <- read_csv("forman_ricci_brasil.csv")
+
+# Organizando as datas
+ricci_brasil <- ricci_brasil %>% 
+  mutate(data = as.Date.character(periodo, format = "%d %b"))
+
+ricci_mundo <- ricci_mundo %>% 
+  mutate(data = as.Date.character(periodo, format = "%d %b"))
+```
+
+Brasil
+=======================================================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Casos de COVID-19 no Brasil
+
+```{r}
+### Seção 1: Curvatura Forman-Ricci - Brasil ------------------------------------
+
+#============#
+# Gráfico 1  #
+##############
+
+# Casos
+plot_brasil2 <- ggplot(ricci_brasil, aes(x = data, y = sum_epic)) +
+  geom_point(color = "darkred") + geom_line(color="darkred") +
+  labs(title = "COVID-19 no Brasil",
+       subtitle = "Total de casos",
+       caption = "") +
+  xlab("Janela de tempo") + 
+  ylab("Total de casos") +
+  scale_x_date(date_breaks = "2 days", date_labels = "%b %d") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_y_continuous(breaks = seq(0,max(ricci_brasil$sum_epic), 500)) 
+##### Plotly
+fig_casos <- plot_brasil2
+graficoCasos <- ggplotly(fig_casos)
+graficoCasos  
+```
+
+
+
+### Curvatura Forman-Ricci (Brasil)
+
+```{r}
+#===========#
+# Gráfico 2 #
+#===========#
+
+# Curvatura
+plot_brasil <- ggplot(ricci_brasil, aes(x = data, y = forman_ricci)) +
+  geom_point(color = "darkgreen") + geom_line(color="darkgreen") +
+  labs(title = "COVID-19 no Brasil",
+       subtitle = "Curvatura de Forman-Ricci",
+       caption = "") +
+  xlab("Janela de tempo") + 
+  ylab("Curvatura de Forman-Ricci") +
+  scale_x_date(date_breaks = "2 days", date_labels = "%b %d") +
+  scale_y_continuous(breaks = seq(0, max(ricci_brasil$forman_ricci), 2)) +
+  theme(axis.text.x = element_text(angle = 90))
+  
+  
+###### Plotly
+grafico2 <- ggplotly(plot_brasil)
+grafico2
+```
+
+Mundo
+=======================================================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Casos de COVID-19 no Mundo
+
+```{r}
+#============#
+# Gráfico 1  #
+##############
+
+# Casos
+plot_mundoCasos <- ggplot(ricci_mundo, aes(x = data, y = sum_epic)) +
+  geom_point(color = "darkred") + geom_line(color = "darkred") +
+  labs(title = "COVID-19 no Mundo",
+       subtitle = "Total de casos") + 
+  xlab("Janela de tempo") + 
+  ylab("Total de casos") +
+  scale_x_date(date_breaks = "2 days", date_labels = "%b %d") +
+  scale_y_continuous(breaks = seq(0,max(ricci_mundo$sum_epic), 100000)) +
+  theme(axis.text.x = element_text(angle = 90)) 
+###### Plotly
+graficomundoCasos <- ggplotly(plot_mundoCasos)
+graficomundoCasos
+```
+
+### Curvatura Forman-Ricci (Mundo)
+```{r}
+#============#
+# Gráfico 2  #
+##############
+# Curvatura
+plot_mundo <- ggplot(ricci_mundo, aes(x = data, y = forman_ricci)) +
+  geom_point(color = "darkgreen") + geom_line(color = "darkgreen") +
+  labs(title = "COVID-19 no Mundo",
+       subtitle = "Curvatura de Forman-Ricci",
+       caption = "") +
+  xlab("Janela de tempo") + 
+  ylab("Curvatura de Forman-Ricci") +
+  scale_x_date(date_breaks = "2 days", date_labels = "%b %d") +
+  scale_y_continuous(breaks = seq(0,max(ricci_mundo$forman_ricci), 25)) +
+  theme(axis.text.x = element_text(angle = 90)) 
+  
+###### Plotly
+figmundo <- plot_mundo 
+graficomundo <- ggplotly(figmundo)
+graficomundo
+
+```
+
+Teste
+=======================================================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Casos de COVID-19 no Mundo
+
+```{r}
+#============#
+# Gráfico 1  #
+##############
+
+t <- plot_ly() %>%
+  add_trace(
+    type = "scatter",
+    mode = "markers+lines+text",
+    x = ricci_brasil$data, 
+    y = ricci_brasil$sum_epic,
+    textfont = list(family = "Roboto Condensed", size = 16)
+  ) 
+
+
+t <- t %>% layout(yaxis = list(range = c(0, 6000)))
+t
+```
+
