@@ -27,6 +27,8 @@ use_python('/opt/anaconda3/bin/python', required = TRUE)
 # Rodando 
 # Importante: mudar o diretório para onde se encontra o arquivo!
 py_run_file("Ricci.py")
+```
+
 
 
 # Carregando os csv's gerados
