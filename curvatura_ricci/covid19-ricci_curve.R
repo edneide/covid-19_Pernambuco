@@ -18,10 +18,10 @@ ricci_brasil <- read_csv("forman_ricci_brasil.csv")
 
 
 ### Mudando o formato das datas
-ricci_brasil$periodo = as.Date.character(ricci_brasil$periodo, format = "%d %b")
+ricci_brasil$periodo = as.Date(ricci_brasil$periodo, format = "%d %b")
 class(ricci_brasil$periodo)
 write.csv(ricci_brasil, "forman_ricci_brasil.csv")
 
-ricci_mundo$periodo = as.Date.character(ricci_mundo$periodo, format = "%d %b")
+ricci_mundo$periodo = as.Date(ricci_mundo$periodo, format = "%d %b")
 class(ricci_mundo$periodo)
 write.csv(ricci_mundo, "forman_ricci_mundial.csv")
