@@ -15,10 +15,12 @@ py_run_file("Fitting_curvature_.py")
 
 # Carregando os csv's gerados
 Casos_confirmados_Brazil_Fitting <- read_csv("Casos_confirmados_Brazil_Fitting.csv")
-Casos_confirmados_Brazil_Fitting$Data = as.Date.character(Casos_confirmados_Brazil_Fitting$Data, format = "%d %b")
+
+Casos_confirmados_Brazil_Fitting$Data = 
+  as.Date.character(Casos_confirmados_Brazil_Fitting$Data, format = "%d %b")
+
 class(Casos_confirmados_Brazil_Fitting$Data)
 
-Casos_confirmados_Brazil_Fitting = Casos_confirmados_Brazil_Fitting[,-1]
 write.csv(Casos_confirmados_Brazil_Fitting, 
           "Casos_confirmados_Brazil_Fitting.csv")
 
@@ -27,8 +29,11 @@ write.csv(Casos_confirmados_Brazil_Fitting,
 Casos_confirmados_Pernambuco_Fitting <- read_csv("Casos_confirmados_Pernambuco_Fitting.csv")
 
 
-Casos_confirmados_Pernambuco_Fitting$Data = as.Date.character(Casos_confirmados_Pernambuco_Fitting$Data, format = "%d %b")
+Casos_confirmados_Pernambuco_Fitting$Data = 
+  as.Date.character(Casos_confirmados_Pernambuco_Fitting$Data, format = "%d %b")
 class(Casos_confirmados_Pernambuco_Fitting$Data)
 
 write.csv(Casos_confirmados_Pernambuco_Fitting, 
           "Casos_confirmados_Pernambuco_Fitting.csv")
+
+
