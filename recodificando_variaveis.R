@@ -1,10 +1,8 @@
 # Carregando a base de dados limpa
 library(readr)
 
-
-df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/08-04-2020/recife_att_DOTS_2020-04-08_19-52.csv", 
+df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/09-04-2020/recife_att_DOTS_2020-04-09_21-23.csv", 
                                                ";", escape_double = FALSE, trim_ws = TRUE)
-
 names(df)
 
 # Aplicando a função para padronizar o nome das variáveis
