@@ -1,6 +1,6 @@
 # Carregando a base de dados limpa
 library(readr)
-df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/26-04-2020/recife_att_DOTS_2020-04-27_01-00.csv", 
+df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/27-04-2020/recife_att_DOTS_2020-04-28_00-15.csv", 
                                                ";", escape_double = FALSE, trim_ws = TRUE)
 
 
