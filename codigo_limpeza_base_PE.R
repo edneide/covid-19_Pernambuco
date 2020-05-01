@@ -1,13 +1,6 @@
-library(scales)
-library(formatR) 
-library(eeptools)
-library(readxl)
-library(Rclean)
 
-PE_full <- read_excel("Covid19_19.27.2020_Lika.xlsx", col_types = c("numeric", "skip", "text", "date", "skip", "text", "date", "numeric", "skip", "text", "text", 
-                                                                    "text", "text", "text", "skip", "date", "text", "text", "text", "skip", "skip", "skip", "skip", 
-                                                                    "text", "text", "text", "text", "numeric", "numeric", "text", "text", "text", "text", "text", 
-                                                                    "date", "text", "text", "text", "skip", "skip", "skip", "skip"))
+
+PE_full <- read_excel()
 
 PE_full <- as_tibble(clean_names(PE_full)) %>% 
   print()
@@ -50,33 +43,40 @@ PE_full1i <- PE_full1 %>%
                                                      "DESCARTADO NEGATIVO INFLUENZA NEGATIVO SARS-COV-2" = "Negativo", 
                                                      "CONFIRMADO AGUARDANDO INFLUENZA SARS-COV-2" = "Covid-19",
                                                      "DESCARTADO INFLUENZA A H1N1" = "H1N1", 
-                                                     "DESCARTADO OUTRO CORONAVÍRUS OC43" = "HCoV-OC43", 
-                                                     "DESCARTADO RINOVÍRUS" = "RV", 
-                                                     "DESCARTADO RINOVÍRUS CORONAVÍRUS 229E" = "RV HCoV-229E", 
+                                                     "DESCARTADO OUTRO CORONAVIRUS OC43" = "HCoV-OC43", 
+                                                     "DESCARTADO RINOVIRUS" = "RV", 
+                                                     "DESCARTADO RINOVIRUS CORONAVIRUS 229E" = "RV HCoV-229E", 
                                                      "DESCARTADO INFLUENZA A" = "Influenza A", 	
-                                                     "DESCARTADO METAPNEUMOVÍRUS" = "Metapneumovírus", 
-                                                     "DESCARTADO OUTRO CORONAVÍRUS NL63" = "HCoV-NL63", 
-                                                     "DESCARTADO VÍRUS SINCICIAL RESPIRATÓRIO" = "VSR",
-                                                     "DESCARTADO RINOVÍRUS INLUENZA A" = "RV Influenza A", 
-                                                     "INCONCLUSIVO COLETA NÃO REALIZADA" = "Inconclusivo",
+                                                     "DESCARTADO METAPNEUMOVIRUS" = "Metapneumovírus", 
+                                                     "DESCARTADO OUTRO CORONAVIRUS NL63" = "HCoV-NL63", 
+                                                     "DESCARTADO VIRUS SINCICIAL RESPIRATORIO" = "VSR",
+                                                     "DESCARTADO RINOVIRUS INLUENZA A" = "RV Influenza A", 
+                                                     "INCONCLUSIVO COLETA NAO REALIZADA" = "Inconclusivo",
                                                      "DESCARTADO AGUARDANDO INFLUENZA NEGATIVO SARS-COV-2" = "Negativo", 
                                                      "DESCARTADO INFLUENZA A H1N1 NEGATIVO SARS-COV-2" = "H1N1", 
-                                                     "EM INVESTIGAÇÃO NEGATIVO INFLUENZA AGUARDANDO SARS-COV-2" = "Negativo", 
+                                                     "EM INVESTIGAÇAO NEGATIVO INFLUENZA AGUARDANDO SARS-COV-2" = "Negativo", 
                                                      "DESCARTADO INFLUENZA A E B" = "Influenza A.B",
                                                      "DESCARTADO INFLUENZA A NEGATIVO SARS-COV-2" = "Influenza A", 
                                                      "DESCARTADO INFLUENZA B NEGATIVO SARS-COV-2" = "Influenza B",
-                                                     "EM INVESTIGAÇÃO AGUARDANDO RESULTADO" = "Negativo",
-                                                     "EM INVESTIGAÇÃO INCONCLUSIVO SARS-COV-2" = "Negativo",
+                                                     "EM INVESTIGAÇAO AGUARDANDO RESULTADO" = "Negativo",
+                                                     "EM INVESTIGAÇAO INCONCLUSIVO SARS-COV-2" = "Negativo",
                                                      "CONFIRMADO INFLUENZA A SARS-COV-2" = "Influenza A Covid-19", 
-                                                     "EM INVESTIGAÇÃO AGUARDANDO INFLUENZA INCONCLUSIVO SARS-COV-2" = "Negativo", 
-                                                     "EM INVESTIGAÇÃO NEGATIVO INFLUENZA INCONCLUSIVO SARS-COV-2" = "Negativo", 
-                                                     "EM INVESTIGAÇÃO INFLUENZA A INCONCLUSIVO SARS-COV-2" = "Negativo", 
+                                                     "EM INVESTIGAÇAO AGUARDANDO INFLUENZA INCONCLUSIVO SARS-COV-2" = "Negativo", 
+                                                     "EM INVESTIGAÇAO NEGATIVO INFLUENZA INCONCLUSIVO SARS-COV-2" = "Negativo", 
+                                                     "EM INVESTIGAÇAO INFLUENZA A INCONCLUSIVO SARS-COV-2" = "Negativo", 
                                                      "DESCARTADO INFLUENZA A E B NEGATIVO SARS-COV-2" = "Negativo", 
                                                      "CONFIRMADO INFLUENZA B SARS-COV-2" = "Influenza B Covid-19", 
                                                      "CONFIRMADO INFLUENZA A E B SARS-COV-2" = "Influenza A.B Covid-19",
-                                                     "EM INVESTIGAÇÃO NEGATIVO INFLUENZA" = "Negativo", 
-                                                     "EM INVESTIGAÇÃO NA" = "Negativo", 
-                                                     "DESCARTADO NEGATIVO INFLUENZA" = "Negativo"))) %>% 
+                                                     "EM INVESTIGAÇAO NEGATIVO INFLUENZA" = "Negativo", 
+                                                     "EM INVESTIGAÇAO NA" = "Negativo", 
+                                                     "DESCARTADO NEGATIVO INFLUENZA" = "Negativo",
+                                                     "EM INVESTIGACAO AGUARDANDO RESULTADO" = "Negativo",
+                                                     "EM INVESTIGACAO NEGATIVO INFLUENZA AGUARDANDO SARS-COV-2" = "Negativo",
+                                                     "EM INVESTIGACAO INCONCLUSIVO SARS-COV-2" = "Inconclusivo", 
+                                                     "EM INVESTIGACAO NEGATIVO INFLUENZA INCONCLUSIVO SARS-COV-2" = "Inconclusivo",
+                                                     "EM INVESTIGACAO NEGATIVO INFLUENZA" = "Negativo", 
+                                                     "EM INVESTIGACAO AGUARDANDO INFLUENZA INCONCLUSIVO SARS-COV-2" = "Inconclusivo",
+                                                     "EM INVESTIGACAO INFLUENZA A INCONCLUSIVO SARS-COV-2" = "Inconclusivo"))) %>% 
   print()
 
 PE_full1i <- PE_full1i %>%
@@ -85,8 +85,9 @@ PE_full1i <- PE_full1i %>%
                                                      "INFLUENZA-A E B NEGATIVO SARS-COV-2" = "Influenza A.B", 
                                                      "INFLUENZA-A NEGATIVO SARS-COV-2" = "Influenza A",
                                                      "INFLUENZA-B NEGATIVO SARS-COV-2" = "Influenza B", 
-                                                     "RV CORONAVÍRUS 229E" = "HCoV-229E",
+                                                     "RV CORONAVIRUS 229E" = "HCoV-229E",
                                                      "RV INLUENZA A" = "	RV Influenza A"
+                                                     
   ))) %>% 
   print()
 
