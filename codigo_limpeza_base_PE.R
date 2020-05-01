@@ -2,10 +2,15 @@ library(scales)
 library(formatR) 
 library(eeptools)
 library(readxl)
+library(devtools)
+install_github("ROpenSci/Rclean")
 library(Rclean)
 library(readr)
+library(tidyverse)
 
-PE_full <- read.csv('https://raw.githubusercontent.com/edneide/covid-19_Pernambuco/master/covid-19_Pernambuco.csv')
+PE_full <- read_excel("~/Google Drive/Coronavirus/IRRD/planilhas de pe/30-04-2020/Banco Covid-19_29.04.2020_completo Lika.xlsx")
+
+
 
 PE_full <- as_tibble(clean_names(PE_full)) %>% 
   print()
@@ -116,3 +121,6 @@ PE_full1i <- PE_full1i %>%
                                              "Influenza A", "Influenza B", "Influenza A.B", "H1N1", "RV HCoV-229E", "	RV Influenza A",
                                              "Influenza A Covid-19", "Influenza B Covid-19", "Influenza A.B Covid-19", "Covid-19"))) %>% 
   print()
+
+
+write.csv(PE_full1i, "PE_full.csv")
