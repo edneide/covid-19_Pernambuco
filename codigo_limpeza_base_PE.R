@@ -1,6 +1,11 @@
+library(scales)
+library(formatR) 
+library(eeptools)
+library(readxl)
+library(Rclean)
+library(readr)
 
-
-PE_full <- read_excel()
+PE_full <- read.csv('https://raw.githubusercontent.com/edneide/covid-19_Pernambuco/master/covid-19_Pernambuco.csv')
 
 PE_full <- as_tibble(clean_names(PE_full)) %>% 
   print()
