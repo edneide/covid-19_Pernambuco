@@ -1,8 +1,10 @@
+setwd("~/Documents/GitHub/covid-19_Pernambuco")
+
 # Carregando a base de dados limpa
 library(readr)
-df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/06-05-2020/recife_att_DOTS_2020-05-06_23-11.csv", 
+df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/07-05-2020/recife_att_DOTS_2020-05-08_02-54.csv", 
                                                ";", escape_double = FALSE, trim_ws = TRUE)
-dim(df)
+names(df)
 
 # Aplicando a função para padronizar o nome das variáveis
 library(janitor)
