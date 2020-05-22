@@ -1,4 +1,4 @@
-setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/19-05-2020/")
+setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/20-05-2020/")
 
 library(readr)
 
@@ -15,5 +15,5 @@ dim(casos_srag)
 
 
 # Salvando em csv
-write.csv(casos_srag, "covid_19_PE_SRAG_att_em_20_05_2020.csv")
-write.csv(obitos_pe, "covid_19_PE_obitos_att_em_20_05_2020.csv")
+write.csv(casos_srag, "covid_19_PE_SRAG_att_em_21_05_2020.csv")
+write.csv(obitos_pe, "covid_19_PE_obitos_att_em_21_05_2020.csv")
