@@ -2,7 +2,7 @@ setwd("~/Documents/GitHub/covid-19_Pernambuco")
 
 # Carregando a base de dados limpa
 library(readr)
-df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/22-05-2020/recife_att_DOTS_2020-05-23_05-55.csv", 
+df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/23-05-2020/recife_att_DOTS_2020-05-24_05-19.csv", 
                                                ";", escape_double = FALSE, trim_ws = TRUE)
 names(df)
 
@@ -10,8 +10,6 @@ names(df)
 library(janitor)
 de <- janitor::clean_names(df)
 names(de)
-
-
 
 
 #path = '/Users/edneideramalho/Documents/GitHub/covid-19_Pernambuco/'
