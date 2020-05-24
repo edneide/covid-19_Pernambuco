@@ -15,5 +15,5 @@ dim(casos_srag)
 
 
 # Salvando em csv
-write.csv(casos_srag, "covid_19_PE_SRAG_att_em_22_05_2020.csv")
-write.csv(obitos_pe, "covid_19_PE_obitos_att_em_22_05_2020.csv")
+write.csv(casos_srag, "covid_19_PE_SRAG_att_em_23_05_2020.csv")
+write.csv(obitos_pe, "covid_19_PE_obitos_att_em_23_05_2020.csv")

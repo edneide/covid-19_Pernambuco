@@ -2,8 +2,8 @@ setwd("~/Documents/GitHub/covid-19_Pernambuco")
 
 # Carregando a base de dados limpa
 library(readr)
-df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/21-05-2020/atualizacao/recife_att_DOTS_2020-05-22_11-51 (1).csv", 
-                                                  ";", escape_double = FALSE, trim_ws = TRUE)
+df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/22-05-2020/recife_att_DOTS_2020-05-23_05-55.csv", 
+                                               ";", escape_double = FALSE, trim_ws = TRUE)
 names(df)
 
 # Aplicando a função para padronizar o nome das variáveis
