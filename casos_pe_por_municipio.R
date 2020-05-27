@@ -1,4 +1,4 @@
-setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/23-05-2020/")
+setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/25-05-2020/")
 
 library(readr)
 
@@ -13,7 +13,7 @@ obitos_pe <- read.csv("https://raw.githubusercontent.com/JTeodomiro/covid19PE/ma
 dim(casos_total)
 dim(casos_srag)
 
-
+library(lubridate)
 # Salvando em csv
-write.csv(casos_srag, "covid_19_PE_SRAG_att_em_23_05_2020.csv")
-write.csv(obitos_pe, "covid_19_PE_obitos_att_em_23_05_2020.csv")
+write.csv(casos_srag, paste("covid_19_PE_SRAG_att_em_", today(), ".csv"))
+write.csv(obitos_pe, paste("covid_19_PE_obitos_att_em_", today(), ".csv"))
