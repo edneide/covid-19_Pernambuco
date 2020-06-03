@@ -2,7 +2,7 @@ setwd("~/Documents/GitHub/covid-19_Pernambuco")
 
 # Carregando a base de dados limpa
 library(readr)
-df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/31-05-2020/recife_att_DOTS_2020-06-01_06-27.csv", 
+df <- read_delim("~/Google Drive/Coronavirus/IRRD/planilhas de pe/01-06-2020/bases_01.06.2020_00/recife_att_DOTS_2020-06-02_05-35.csv", 
                                                ";", escape_double = FALSE, trim_ws = TRUE)
 names(df)
 
