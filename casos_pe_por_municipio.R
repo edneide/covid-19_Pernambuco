@@ -1,4 +1,4 @@
-setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/15-06-2020/")
+setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/16-06-2020/")
 
 library(readr)
 
