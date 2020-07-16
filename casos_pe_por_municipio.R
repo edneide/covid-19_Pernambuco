@@ -1,4 +1,4 @@
-setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/13-07-2020/")
+setwd("~/Google Drive/Coronavirus/IRRD/planilhas de pe/14-07-2020/")
 
 library(readr)
 
@@ -19,4 +19,3 @@ write.csv(casos_srag, paste0("covid_19_PE_SRAG_att_em_", today(), ".csv"))
 write.csv(obitos_pe, paste0("covid_19_PE_obitos_att_em_", today(), ".csv"))
 write.csv(casos_total,paste0("covid_19_PE_casos_total_att_em_", today(), ".csv"))
 
-tail(casos_total$Data)
