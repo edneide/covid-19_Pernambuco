@@ -1,3 +1,4 @@
+library(lubridate)
 setwd("~/Documents/GitHub/covid-19_Pernambuco")
 
 
