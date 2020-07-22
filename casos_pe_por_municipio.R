@@ -15,7 +15,7 @@ dim(casos_srag)
 
 library(lubridate)
 # Salvando em csv
-write.csv(casos_srag, paste0("covid_19_PE_SRAG_att_em_", today(), ".csv"))
-write.csv(obitos_pe, paste0("covid_19_PE_obitos_att_em_", today(), ".csv"))
-write.csv(casos_total,paste0("covid_19_PE_casos_total_att_em_", today(), ".csv"))
+write.csv(casos_srag, paste0("covid_19_PE_SRAG_att_em_", today()-1, ".csv"))
+write.csv(obitos_pe, paste0("covid_19_PE_obitos_att_em_", today()-1, ".csv"))
+write.csv(casos_total,paste0("covid_19_PE_casos_total_att_em_", today()-1, ".csv"))
 
