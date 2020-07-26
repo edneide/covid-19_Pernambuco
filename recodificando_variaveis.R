@@ -3,7 +3,7 @@ setwd("~/Documents/GitHub/covid-19_Pernambuco")
 
 
 
-hoje <- format(as.Date(today()), "%d-%m-%Y")
+hoje <- format(as.Date(today()-1), "%d-%m-%Y")
 
 
 # Carregando a base de dados limpa
