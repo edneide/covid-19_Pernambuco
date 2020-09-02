@@ -8,7 +8,7 @@ hoje <- format(as.Date(today()-1), "%d-%m-%Y")
 
 # Carregando a base de dados limpa
 library(readr)
-df <- read_delim(paste0("~/Google Drive/Coronavirus/IRRD/planilhas de pe/agosto/", hoje,
+df <- read_delim(paste0("~/Google Drive/Coronavirus/IRRD/planilhas de pe/setembro/", hoje,
 "/bases/recife_att.csv"), ";", escape_double = TRUE, trim_ws = TRUE)
 names(df)
 dim(df)
