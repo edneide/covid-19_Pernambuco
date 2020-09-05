@@ -17,7 +17,7 @@ dim(df)
 library(janitor)
 de <- janitor::clean_names(df)
 names(de)
-
+names(de)[1] <- "data"
 
 #path = '/Users/edneideramalho/Documents/GitHub/covid-19_Pernambuco/'
 write.csv(de, "covid-19_Pernambuco.csv")
