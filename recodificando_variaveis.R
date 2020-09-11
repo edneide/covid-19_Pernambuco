@@ -13,7 +13,7 @@ df <- read_delim(paste0("~/Google Drive/Coronavirus/IRRD/planilhas de pe/setembr
 names(df)
 dim(df)
 
- # Aplicando a função para padronizar o nome das variáveis
+# Aplicando a função para padronizar o nome das variáveis
 library(janitor)
 de <- janitor::clean_names(df)
 names(de)
